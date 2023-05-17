@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Request } from 'express';
+import { UpdateCustomerDto } from './dto/update-customer.dto';
 
 @Injectable()
 export class CustomerService {
@@ -12,7 +13,7 @@ return {username: 'mary' ,hostel:'flats'};
         return body;
     }
 
-    update(updateCustomerDto:{username: string; hostel: string }, param:{customerId: number}) {
+    update(updateCustomerDto:UpdateCustomerDto, param:{customerId: number}) {
         return {body:updateCustomerDto,param};
     }
 

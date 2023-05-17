@@ -1,6 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Req } from '@nestjs/common';
 import { CustomerService } from './customer.service';
 import { Request } from 'express';
+import { UpdateCustomerDto } from './dto/update-customer.dto';
 @Controller('customer')
 export class CustomerController {
     constructor(private customerService: CustomerService){}
@@ -16,7 +17,7 @@ export class CustomerController {
     }
 
     @Patch('/:customerId')
-    update(@Body() updateCustomerDto: {username: string; hostel: string }, 
+    update(@Body() updateCustomerDto: UpdateCustomerDto, 
     @Param() param: {customerId: number}){
         return this.customerService.update(updateCustomerDto,param);
     }
