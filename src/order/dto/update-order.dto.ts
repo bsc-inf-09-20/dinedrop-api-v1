@@ -1,4 +1,10 @@
-export class UpdateOrderDto {u
-    sername: string;
-     meal: string
+import { IsString } from "class-validator";
+
+export class UpdateOrderDto {
+
+    @IsString()
+    username: string;
+
+    @IsString()
+     meal: string;
      }
