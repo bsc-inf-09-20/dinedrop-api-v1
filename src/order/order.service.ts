@@ -7,12 +7,12 @@ export class OrderService {
         return {username:"mary", order: "chips"};
     }
 
-    placeOrder(req: Request){
-        return req.body;
+    placeOrder(body:any){
+        return body;
     }
 
-    updateOrder(req: Request, param:{customerId: number}) {
-        return {body: req.body,param};
+    updateOrder(updateOrderDto: {username: string; meal: string }, param:{customerId: number}) {
+        return {body: updateOrderDto,param};
     }
 
     deleteOrder(param:{customerId: number}) {

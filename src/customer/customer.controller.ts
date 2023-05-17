@@ -1,4 +1,4 @@
-import { Controller, Delete, Get, Param, Patch, Post, Req } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Req } from '@nestjs/common';
 import { CustomerService } from './customer.service';
 import { Request } from 'express';
 @Controller('customer')
@@ -11,13 +11,14 @@ export class CustomerController {
     }
 
     @Post()
-    store(@Req() req: Request){
-        return this.customerService.create(req);
+    store(@Body() body: any){
+        return this.customerService.create(body);
     }
 
     @Patch('/:customerId')
-    update(@Req() req: Request, @Param() param: {customerId: number}){
-        return this.customerService.update(req,param);
+    update(@Body() updateCustomerDto: {username: string; hostel: string }, 
+    @Param() param: {customerId: number}){
+        return this.customerService.update(updateCustomerDto,param);
     }
 
 

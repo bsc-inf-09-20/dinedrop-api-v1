@@ -8,12 +8,12 @@ export class CustomerService {
 return {username: 'mary' ,hostel:'flats'};
     }
 
-    create(req: Request) {
-        return req.body;
+    create(body: any) {
+        return body;
     }
 
-    update(req: Request, param:{customerId: number}) {
-        return {body: req.body,param};
+    update(updateCustomerDto:{username: string; hostel: string }, param:{customerId: number}) {
+        return {body:updateCustomerDto,param};
     }
 
     getCustomer(param: {customerId: number}){

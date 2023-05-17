@@ -1,4 +1,4 @@
-import { Controller, Delete, Get, Param, Patch, Post, Req } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Req } from '@nestjs/common';
 import { OrderService } from './order.service';
 import { Request } from 'express';
 
@@ -12,13 +12,14 @@ export class OrderController {
     }
 
     @Post()
-    store(@Req() req: Request){
-        return this.orderService.placeOrder(req);
+    storeOrders(@Body() body: any){
+        return this.orderService.placeOrder(body);
     }
 
     @Patch('/:customerId')
-    updateOrder(@Req() req: Request, @Param() param: {customerId: number}){
-        return this.orderService.updateOrder(req,param);
+    updateOrder(@Body() updateOrderDto: {username: string; meal: string },
+     @Param() param: {customerId: number}){
+        return this.orderService.updateOrder(updateOrderDto,param);
     }
 
     @Delete('/:customerId')
