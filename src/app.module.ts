@@ -3,6 +3,8 @@ import { AppController } from "./app.controller";
 import { CustomerModule } from './customer/customer.module';
 import { OrderModule } from './order/order.module';
 import { TypeOrmModule } from "@nestjs/typeorm";
+import { Customer } from "./customer/Entity/customer.entity";
+import { Orders } from "./order/Entity/order.entity";
 
 @Module({ 
     controllers:[AppController], 
@@ -14,7 +16,7 @@ import { TypeOrmModule } from "@nestjs/typeorm";
             username: 'root',
             password: '',
             database: 'dinedrop',
-            entities: [],
+            entities: [Customer,Orders],
             synchronize: true,
           }),
     ],

@@ -2,27 +2,35 @@ import { Injectable } from '@nestjs/common';
 import { Request } from 'express';
 import { UpdateCustomerDto } from './dto/update-customer.dto';
 import { CreateCustomerDto } from './dto/create-customer.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Customer } from './Entity/customer.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class CustomerService {
 
-    get(){
-return {username: 'mary' ,hostel:'flats'};
+    constructor(
+        @InjectRepository(Customer)
+        private customerRepository: Repository<Customer>
+    ){}
+
+    get():Promise<Customer []>{
+return this.customerRepository.find();
     }
 
     create(createCustomerDto:CreateCustomerDto) {
-        return createCustomerDto;
+        return this.customerRepository.save(createCustomerDto);
     }
 
     update(updateCustomerDto:UpdateCustomerDto, customerId: number) {
-        return {body:updateCustomerDto,customerId};
+        return this.customerRepository.update(customerId,updateCustomerDto);
     }
 
-    getCustomer(customerId: number){
-        return {customerId};
+    getCustomer(id: number){
+        return this.customerRepository.findOne({where: {id} });
     }
 
     delete(customerId: number){
-        return {customerId};
+        return this.customerRepository.delete(customerId);
     }
 }
