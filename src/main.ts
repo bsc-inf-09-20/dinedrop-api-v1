@@ -9,8 +9,8 @@ async function bootstrap() {
   );
 
   const config = new DocumentBuilder()
-    .setTitle('Cats example')
-    .setDescription('The cats API description')
+    .setTitle('Dinedrop')
+    .setDescription('endpoints in my api')
     .setVersion('1.0')
     .addTag('cats')
     .build();
