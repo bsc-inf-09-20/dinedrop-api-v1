@@ -9,14 +9,15 @@ async function bootstrap() {
   );
 
   const config = new DocumentBuilder()
-    .setTitle('Dinedrop')
-    .setDescription('endpoints in my api')
-    .setVersion('1.0')
-    .addTag('cats')
-    .build();
-  const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, document);
+  .setTitle('dinedrop')
+  .setDescription('The dinedrop API description')
+  .setVersion('1.0')
+  .addTag('features')
+  .build();
+const document = SwaggerModule.createDocument(app, config);
+SwaggerModule.setup('api', app, document);
 
+  
   await app.listen(3000);
 }
 bootstrap();
