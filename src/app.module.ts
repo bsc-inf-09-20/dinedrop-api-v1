@@ -4,8 +4,7 @@ import { CustomerModule } from './customer/customer.module';
 import { OrderModule } from './order/order.module';
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { Customer } from "./customer/Entity/customer.entity";
-import { Orders } from "./order/Entity/order.entity";
-import { AuthModule } from './auth/auth.module';
+import { Orders } from "./order/Entity/order.entity"
 
 @Module({ 
     controllers:[AppController], 
@@ -20,7 +19,7 @@ import { AuthModule } from './auth/auth.module';
             entities: [Customer,Orders],
             synchronize: true,
           }),
-        AuthModule,
+        
     ],
 
 })
