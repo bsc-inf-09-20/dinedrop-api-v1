@@ -9,5 +9,7 @@ export class CreateCustomerDto {
     roomNumber: string;
     @IsString()
     phoneNumber: string;
+    @IsString()
+    password: string;
 
 }
