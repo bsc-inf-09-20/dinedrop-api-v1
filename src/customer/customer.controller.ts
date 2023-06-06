@@ -1,11 +1,12 @@
 import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post, Req } from '@nestjs/common';
 import { CustomerService } from './customer.service';
-import { Request } from 'express';
 import { UpdateCustomerDto } from './dto/update-customer.dto';
 import { CreateCustomerDto } from './dto/create-customer.dto';
 @Controller('customer')
 export class CustomerController {
     constructor(private customerService: CustomerService){}
+
+  
 
     @Get()
     getCustomers(){
