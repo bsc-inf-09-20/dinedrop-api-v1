@@ -3,15 +3,15 @@ import { IsString, IsNumber } from "class-validator";
 
 export class CreateOrderDto{
 
-    @IsString()
+   // @IsString()
     @ApiProperty()
     username: string;
-    
-    @IsString()
+
+    //@IsString()
     @ApiProperty()
     meal: string;
 
-    @IsNumber()
+    //@IsNumber()
     @ApiProperty()
     price: number;
 }

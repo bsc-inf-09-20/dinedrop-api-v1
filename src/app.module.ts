@@ -5,6 +5,7 @@ import { OrderModule } from './order/order.module';
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { Customer } from "./customer/Entity/customer.entity";
 import { Orders } from "./order/Entity/order.entity"
+import config from "./ormconfig";
 
 @Module({ 
     controllers:[AppController], 
