@@ -18,7 +18,4 @@ export class Customer {
     @Column()
     phoneNumber: string;
 
-    @Column()  
-    password: string;
-
 }
