@@ -6,7 +6,11 @@ import { CreateCustomerDto } from './dto/create-customer.dto';
 export class CustomerController {
     constructor(private customerService: CustomerService){}
 
-  
+  //POST /login
+  @Post('login')
+  login(): any {
+      return {}
+  }
 
     @Get()
     getCustomers(){

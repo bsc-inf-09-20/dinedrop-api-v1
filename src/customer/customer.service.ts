@@ -14,7 +14,7 @@ export class CustomerService {
         private customerRepository: Repository<Customer>
     ){}
 
-    get():Promise<Customer []>{
+  get():Promise<Customer []>{
 return this.customerRepository.find();
     }
 
@@ -33,5 +33,7 @@ return this.customerRepository.find();
     delete(customerId: number){
         return this.customerRepository.delete(customerId);
     }
-
+findCustomerByUsername(username: string){
+    return this.customerRepository.findOne({where: {username} });
+}
 } 

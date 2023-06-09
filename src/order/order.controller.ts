@@ -9,11 +9,7 @@ export class OrderController {
     constructor(private orderService: OrderService){}
 
 
-    //POST /login
-    @Post('login')
-    login(): any {
-        return {}
-    }
+    
 
     @Get()
     getOrders(){
