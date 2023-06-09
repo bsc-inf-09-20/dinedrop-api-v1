@@ -17,6 +17,5 @@ async validate(username: string,){
     if (!customer){
         throw new UnauthorizedException();
     }
-    return customer
- }
+}
 }

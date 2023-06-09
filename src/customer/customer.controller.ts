@@ -7,10 +7,10 @@ export class CustomerController {
     constructor(private customerService: CustomerService){}
 
   //POST /login
-  @Post('login')
-  login(): any {
-      return {}
-  }
+ // @Post('login')
+  //login(): any {
+    //  return {}
+  //}
 
     @Get()
     getCustomers(){
