@@ -11,10 +11,13 @@ export class AuthService {
         @Inject('CUSTOMER_SERVICE') private readonly customerService: CustomerService,
     ){}
 
-    async validateCustomer(username: string){
+    async validateCustomer(username: string){ 
+        console.log('Inside validateCustomer');
         const customerDB = await this.customerService.findCustomerByUsername(username);
         if (customerDB){
-            console.log(customerDB);
+            console.log('Customer validation success');
+            return customerDB
         }
+        return null;
     }
 }
