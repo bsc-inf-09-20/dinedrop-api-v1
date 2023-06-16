@@ -13,7 +13,7 @@ import config from "./ormconfig";
     imports: [CustomerModule, OrderModule,
         TypeOrmModule.forRoot({
             type: 'mysql',
-            host: ' sql9.freemysqlhosting.net',
+            host: 'sql9.freemysqlhosting.net',
             port: 3306,
             username: 'sql9626749',
             password: 'Yjc6nf61N3',
