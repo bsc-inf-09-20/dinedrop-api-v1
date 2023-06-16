@@ -11,7 +11,8 @@ import config from "./ormconfig";
 @Module({ 
     controllers:[AppController], 
     imports: [CustomerModule, OrderModule,
-        TypeOrmModule.forRoot({
+        TypeOrmModule.forRootAsync({
+            useFactory:()=>({
             type: 'mysql',
             host: 'sql9.freemysqlhosting.net',
             port: 3306,
@@ -20,7 +21,8 @@ import config from "./ormconfig";
             database: 'sql9626749',
             entities: [Customer,Orders],
             synchronize: true,
-          }),
+          }),}),
+            
         AuthModule,
         
     ],
